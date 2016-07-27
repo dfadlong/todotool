@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from interface.views import greeting
+from interface.views import show_itemlist
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', greeting)
+    url(r'^$', show_itemlist)
 ]
