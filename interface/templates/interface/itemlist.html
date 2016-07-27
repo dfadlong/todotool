@@ -3,3 +3,9 @@ Enter item: <input type="text" name="text">
 <input type="submit" value="Add">
 </form>
 <hr>
+
+<ul>
+{% for i in items %}
+<li>{{ i.text }}</li>
+{% endfor %}
+</ul>

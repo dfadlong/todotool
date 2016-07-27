@@ -13,8 +13,14 @@ import datetime
 def show_itemlist(request):
   text = request.GET.get('text', '')
   if text != '':
-    Item.objects.create(text=text, created=datetime.date.today(), isFinished=False, finished=datetime.date.today())
+    Item.objects.create(text=text,
+     created=datetime.date.today(),
+     isFinished=False,
+     finished=datetime.date.today())
+
+  items = Item.objects.all()
+
   template = loader.get_template(
   	'interface/itemlist.html')
-  output = template.render()
+  output = template.render({'items': items})
   return HttpResponse(output)
