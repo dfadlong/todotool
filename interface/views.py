@@ -4,5 +4,10 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from django.template import Context, loader
+
 def greeting(request):
-	return HttpResponse('Hello')
+  template = loader.get_template(
+  	'interface/itemlist.html')
+  output = template.render()
+  return HttpResponse(output)
