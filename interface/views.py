@@ -21,6 +21,7 @@ def show_itemlist(request):
   if done != '':
     itemDone = Item.objects.get(id=done)
     itemDone.isFinished = True
+    itemDone.finished = datetime.date.today()
     itemDone.save()
 
   items = Item.objects.filter(isFinished=False)
