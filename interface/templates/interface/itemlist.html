@@ -1,3 +1,14 @@
+<html>
+<head>
+<style>
+span {
+	color: #ccc;
+	font-size: 70%;
+}
+</style>
+</head>
+<body>
+
 <form action="/" method="GET">
 Enter item: <input type="text" name="text">
 <input type="submit" value="Add">
@@ -6,6 +17,9 @@ Enter item: <input type="text" name="text">
 
 <ul>
 {% for i in items %}
-<li>{{ i.text }}</li>
+<li>{{ i.text }} <span>{{ i.created }}</span></li>
 {% endfor %}
 </ul>
+
+</body>
+</html>
