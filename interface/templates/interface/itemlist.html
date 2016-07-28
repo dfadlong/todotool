@@ -9,6 +9,10 @@ span {
 </head>
 <body>
 
+<p>
+<a href="/">Home</a> <a href="/archive">Archive</a>
+</p>
+
 <form action="/" method="GET">
 Enter item: <input type="text" name="text">
 <input type="submit" value="Add">
@@ -18,7 +22,9 @@ Enter item: <input type="text" name="text">
 <ul>
 {% for i in items %}
 <li>
-  <a href="/?done={{ i.id }}">Done</a>
+  {% if not isArchive %}
+    <a href="/?done={{ i.id }}">Done</a>
+  {% endif %}
   {{ i.text }}
   <span>{{ i.created }}</span>
 </li>

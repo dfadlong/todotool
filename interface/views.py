@@ -27,5 +27,13 @@ def show_itemlist(request):
 
   template = loader.get_template(
   	'interface/itemlist.html')
-  output = template.render({'items': items})
+  output = template.render({'items': items, 'isArchive': False})
+  return HttpResponse(output)
+
+def show_archive(request):
+  items = Item.objects.filter(isFinished=True)
+
+  template = loader.get_template(
+    'interface/itemlist.html')
+  output = template.render({'items': items, 'isArchive': True})
   return HttpResponse(output)

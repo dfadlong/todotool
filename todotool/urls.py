@@ -17,8 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from interface.views import show_itemlist
+from interface.views import show_archive
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', show_itemlist)
+    url(r'^$', show_itemlist),
+    url(r'^archive/', show_archive),
 ]
+
