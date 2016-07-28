@@ -17,7 +17,11 @@ Enter item: <input type="text" name="text">
 
 <ul>
 {% for i in items %}
-<li>{{ i.text }} <span>{{ i.created }}</span></li>
+<li>
+  <a href="/?done={{ i.id }}">Done</a>
+  {{ i.text }}
+  <span>{{ i.created }}</span>
+</li>
 {% endfor %}
 </ul>
 

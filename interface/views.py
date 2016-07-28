@@ -17,8 +17,13 @@ def show_itemlist(request):
      created=datetime.date.today(),
      isFinished=False,
      finished=datetime.date.today())
+  done = request.GET.get('done', '')
+  if done != '':
+    itemDone = Item.objects.get(id=done)
+    itemDone.isFinished = True
+    itemDone.save()
 
-  items = Item.objects.all()
+  items = Item.objects.filter(isFinished=False)
 
   template = loader.get_template(
   	'interface/itemlist.html')
