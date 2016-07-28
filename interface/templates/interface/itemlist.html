@@ -23,7 +23,7 @@ Enter item: <input type="text" name="text">
     <a href="/?done={{ i.id }}">Done</a>
   {% endif %}
   {{ i.text }}
-  <span>{{ i.created }}</span>
+  <span>{{ i.displayDate }}</span>
 </li>
 {% endfor %}
 </ul>
